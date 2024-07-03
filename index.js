@@ -1,53 +1,4 @@
-// const preBtn = document.querySelector('#prev-btn');
-// const nextBtn = document.querySelector('#next-btn');
-// const book = document.querySelector('#book');
 
-// const paper1 = document.querySelector("#p1");
-// const paper2 = document.querySelector("#p2");
-// const paper3 = document.querySelector("#p3");
-// preBtn.addEventListener('click', goPrevpage);
-// nextBtn.addEventListener('click', goNextPage);
-// let currentLocation = 1;
-// let numOfPapers = 3;
-// let maxLocation = numOfPapers + 1;
-
-// function openBook(){
-
-// }
-
-// function closeBook(){
-    
-// }
-
-
-// function goNextPage(){
-//     if(currentLocation < maxLocation){
-//         switch(currentLocation){
-//             case 1: 
-//             openBook()
-//             paper1.classList.add("flipped")
-//             break;
-
-//             case 2: 
-//             paper2.classList.add("flipped")
-//             break;
-
-//             case 3: 
-//             paper3.classList.add("flipped")
-//             closeBook()
-//             break;
-//             default:
-//             throw new Error("unkown state")
-//         }
-//         currentLocation++;
-//     }
-// }
-
-
-
-// function goPrevpage(){
-    
-// }
 
 const preBtn = $('#prev-btn');
 const nextBtn = $('#next-btn');
@@ -60,14 +11,14 @@ let currentLocation = 1;
 let numOfPapers = 3;
 let maxLocation = numOfPapers + 1;
 
-// Función para abrir el libro y mover los botones
+
 function openBook() {
     book.css('transform', 'translateX(50%)');
     preBtn.css('transform', 'translateX(-180px)');
     nextBtn.css('transform', 'translateX(180px)');
 }
 
-// Función para cerrar el libro y resetear posiciones de los botones
+
 function closeBook(isAtBeginning) {
     if (isAtBeginning) {
         book.css('transform', 'translateX(0%)');
@@ -78,7 +29,7 @@ function closeBook(isAtBeginning) {
     nextBtn.css('transform', 'translateX(0px)');
 }
 
-// Manejar clic en botón Siguiente
+
 $(nextBtn).on('click', function() {
     if (currentLocation < maxLocation) {
         switch (currentLocation) {
@@ -100,7 +51,7 @@ $(nextBtn).on('click', function() {
     }
 });
 
-// Manejar clic en botón Anterior
+
 $(preBtn).on('click', function() {
     if (currentLocation > 1) {
         switch (currentLocation) {
